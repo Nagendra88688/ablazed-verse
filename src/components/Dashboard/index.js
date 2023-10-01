@@ -1,8 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Card } from "antd";
 import styles from "./styles.module.css";
-import Meta from "antd/es/card/Meta";
+import dashboardData from "../../../public/dashboardData";
 
 const COMMON_IMAGE =
   "https://img.freepik.com/premium-photo/beautiful-landscape-based-3d-rendering-illustration_771975-25.jpg";
@@ -15,69 +13,11 @@ const Dashboard = () => {
       </div>
 
       <div className={styles.image_container}>
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
-
-        <Card
-          hoverable
-          className={styles.card}
-          cover={<img alt="example" src={COMMON_IMAGE} />}
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
+        {dashboardData.map((item) => (
+          <div className={styles.pics} key={item?.image}>
+            <img src={item?.image} alt="image" style={{ width: "100%" }} />
+          </div>
+        ))}
       </div>
     </div>
   );
