@@ -52,6 +52,10 @@
   opacity: 1;
 }
 
+.card_text:active {
+  opacity: 1;
+}
+
 @media (max-width: 991px) {
   .image_container {
     -webkit-column-count: 3;
