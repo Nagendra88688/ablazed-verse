@@ -4,9 +4,6 @@ import styles from "./styles.module.css";
 import dashboardData from "../../../public/dashboardData";
 import { Modal } from "antd";
 
-const COMMON_IMAGE =
-  "https://img.freepik.com/premium-photo/beautiful-landscape-based-3d-rendering-illustration_771975-25.jpg";
-
 const Dashboard = () => {
   const [details, setDetails] = useState(null);
   const handleOk = () => {
@@ -20,10 +17,9 @@ const Dashboard = () => {
       </div>
 
       <div>
-
         {/* upper fading  */}
-        <div className={styles.upper_fader}/>
-        
+        <div className={styles.upper_fader} />
+
         <div
           className={styles.image_container}
           style={{ position: "relative" }}
@@ -53,9 +49,8 @@ const Dashboard = () => {
           ))}
         </div>
 
-          {/* lower fading  */}
-          <div className={styles.lower_fader}/>
-
+        {/* lower fading  */}
+        <div className={styles.lower_fader} />
       </div>
 
       <Modal
