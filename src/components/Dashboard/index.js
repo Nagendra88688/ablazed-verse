@@ -20,6 +20,10 @@ const Dashboard = () => {
       </div>
 
       <div>
+
+        {/* upper fading  */}
+        <div className={styles.upper_fader}/>
+        
         <div
           className={styles.image_container}
           style={{ position: "relative" }}
@@ -48,6 +52,10 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
+
+          {/* lower fading  */}
+          <div className={styles.lower_fader}/>
+
       </div>
 
       <Modal

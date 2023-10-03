@@ -71,6 +71,16 @@
   overflow: hidden;
 }
 
+.upper_fader {
+  height: 20vh;
+  background-image: linear-gradient(white,black);
+}
+
+.lower_fader {
+  height: 20vh;
+  background-image: linear-gradient(black, white);
+}
+
 @media (max-width: 991px) {
   .image_container {
     -webkit-column-count: 3;
