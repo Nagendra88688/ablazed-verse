@@ -9,7 +9,7 @@ const journalSchema = new Schema(
     description: {
       type: String,
     },
-    imageUrl: {
+    imagePath: {
       type: String,
     },
   },

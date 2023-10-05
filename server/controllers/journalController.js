@@ -33,11 +33,11 @@ const show = (req, res, next) => {
 
 //add a new journal
 const store = (req, res, next) => {
-  const { name, description, imageUrl } = req?.body || {};
+  const { name, description, imagePath } = req?.body || {};
   const newJournal = new Journal({
     name,
     description,
-    imageUrl,
+    imagePath,
   });
 
   newJournal
@@ -54,12 +54,12 @@ const store = (req, res, next) => {
 
 //update a journal
 const update = (req, res, next) => {
-  const { id, name, description, imageUrl } = req?.body || {};
+  const { id, name, description, imagePath } = req?.body || {};
 
   const updatedData = {
     name,
     description,
-    imageUrl,
+    imagePath,
   };
 
   Journal.findByIdAndUpdate(id, { $set: updatedData })

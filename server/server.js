@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+require("dotenv").config();
 
 const JournalRoute = require("./routes/journal");
 
-const URL =
-  "mongodb+srv://ablazed-verse:ablazedVerse@ablazed-verse-cluster.kyomifx.mongodb.net/?retryWrites=true&w=majority";
+const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
   useNewUrlParser: true,
@@ -29,7 +30,10 @@ app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const PORT = process.env.port || 9000;
+const PORT = 9000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

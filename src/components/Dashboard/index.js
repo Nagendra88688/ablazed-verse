@@ -2,10 +2,13 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import dashboardData from "../../../public/dashboardData";
-import { Modal } from "antd";
+import { Button, Modal } from "antd";
+import CreateJournalModal from "../CreateJournalModal";
 
 const Dashboard = () => {
   const [details, setDetails] = useState(null);
+  const [showCreate, setShowCreate] = useState(false);
+
   const handleOk = () => {
     setDetails(null);
   };
@@ -15,6 +18,14 @@ const Dashboard = () => {
       <div className={styles.heading}>
         <h1>ABLAZED VERSE</h1>
       </div>
+
+      <Button type="primary" onClick={() => setShowCreate(true)}>
+        Create Journal
+      </Button>
+      <CreateJournalModal
+        showCreate={showCreate}
+        setShowCreate={setShowCreate}
+      />
 
       <div>
         {/* upper fading  */}
@@ -60,6 +71,7 @@ const Dashboard = () => {
         footer={null}
         width="50%"
         centered
+        maskClosable={false}
       >
         <div>
           <img src={details?.image} alt="image" style={{ width: "100%" }} />
